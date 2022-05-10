@@ -1,7 +1,7 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 
-const config = {
+/* const config = {
   name: 'MedInformation',
   connector: 'mongodb',
   url: process.env.DB_URL + "MedInformation" + "?replicaSet=rs0",
@@ -12,6 +12,19 @@ const config = {
   database: "MedInformation",
   useNewUrlParser: true,
   protocol: 'mongodb+srv'
+}; */
+
+const config = {
+  name: 'MedInformation',
+  connector: 'mongodb',
+  url: "mongodb://localhost:27017",
+  host: 'localhost',
+  port: 27017,
+  user: "",
+  password: "",
+  database: "MedInformation",
+  useNewUrlParser: true,
+  protocol: 'mongodb'
 };
 
 // Observe application's life cycle to disconnect the datasource when

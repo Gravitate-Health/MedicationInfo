@@ -3,12 +3,12 @@ import {Entity, model, property} from '@loopback/repository';
 @model()
 export class MedInformation extends Entity {
   @property({
-    type: 'number',
+    type: 'string',
     id: true,
-    generated: false,
+    generated: true,
     required: true,
   })
-  id: number;
+  id: string;
 
   @property({
     type: 'string',
