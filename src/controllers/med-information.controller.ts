@@ -37,12 +37,12 @@ export class MedInformationController {
         'application/json': {
           schema: getModelSchemaRef(MedInformation, {
             title: 'NewMedInformation',
-            exclude: ['id'],
+            exclude: ['identifier'],
           }),
         },
       },
     })
-    medInformation: Omit<MedInformation, 'id'>,
+    medInformation: Omit<MedInformation, 'identifier'>,
   ): Promise<MedInformation> {
     return this.medInformationRepository.create(medInformation);
   }
