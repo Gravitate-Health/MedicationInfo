@@ -5,7 +5,7 @@ export class MedInformation extends Entity {
   @property({
     type: 'string',
     id: true,
-    generated: true
+    generated: true,
   })
   identifier: string;
 
