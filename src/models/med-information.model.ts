@@ -7,7 +7,7 @@ export class MedInformation extends Entity {
     id: true,
     generated: true,
   })
-  identifier: string;
+  internalId: string;
 
   @property({
     type: 'string',
