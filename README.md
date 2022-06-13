@@ -61,16 +61,16 @@ npm ci
 
 Usage
 -----
-###Step 1: Run the application
+### Step 1: Run the application
 Inside the directory, run the following command:
 ```bash
 npm start
 ```
-###Step 2: Access through the browser
+### Step 2: Access through the browser
 Open http://127.0.0.1:3000 in your browser, preferably Google Chrome, in private or incognito mode.
 
-###Step 3:  Different endpoints
-POST request, adds a new object to the G-Lens DB: 
+### Step 3:  Different endpoints
+POST request, adds a new object to the G-Lens DB:
 
     https://gravitate-health.lst.tfo.upm.es/med-information/med-informations
 
@@ -78,27 +78,27 @@ GET request, returns the count of the objects stored in the DB:
 
     https://gravitate-health.lst.tfo.upm.es/med-informations/med-informations/count
 
-GET request, returns the list of the objects stored in the DB: 
+GET request, returns the list of the objects stored in the DB:
 
     https://gravitate-health.lst.tfo.upm.es/med-information/med-informations
 
-PATCH request, updates the object that matches the body of the request: 
+PATCH request, updates the object that matches the body of the request:
 
     https://gravitate-health.lst.tfo.upm.es/med-information/med-informations
 
-GET request, returns a single object with ID <id>: 
+GET request, returns a single object with ID <id>:
 
     https://gravitate-health.lst.tfo.upm.es/med-information/med-informations/<id>
 
-PATCH request, updates the object with ID <id>: 
+PATCH request, updates the object with ID <id>:
 
     https://gravitate-health.lst.tfo.upm.es/med-information/med-informations/<id>
 
-PUT request, replaces the object with ID <id>: 
+PUT request, replaces the object with ID <id>:
 
     https://gravitate-health.lst.tfo.upm.es/med-information/med-informations/<id>
 
-DEL request, deletes the object with ID <id>: 
+DEL request, deletes the object with ID <id>:
 
     https://gravitate-health.lst.tfo.upm.es/med-information/med-informations/<id>
 
@@ -114,14 +114,14 @@ In case you find a problem or you need extra help, please use the issues tab to 
 
 Also you can check the following documentation
 
-###Loopback documentation
+### Loopback documentation
 
 Please check out [LoopBack 4 documentation](https://loopback.io/doc/en/lb4/) to
 understand how you can continue to add features to this application.
 
 
 
-###FHIR Model
+### FHIR Model
 
 Please check out the [FHIR Medication Model](https://hl7.org/fhir/2021may/medication.html), used for the definition of Loopback Models
 
