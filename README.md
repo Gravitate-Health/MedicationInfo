@@ -70,13 +70,16 @@ npm start
 Open http://127.0.0.1:3000 in your browser, preferably Google Chrome, in private or incognito mode.
 
 ### Step 3:  Different endpoints
+
+Some of the most useful enpoints are listed below:
+
 POST request, adds a new object to the G-Lens DB:
 
     https://gravitate-health.lst.tfo.upm.es/med-information/med-informations
 
 GET request, returns the count of the objects stored in the DB:
 
-    https://gravitate-health.lst.tfo.upm.es/med-informations/med-informations/count
+    https://gravitate-health.lst.tfo.upm.es/med-information/med-informations/count
 
 GET request, returns the list of the objects stored in the DB:
 
@@ -101,6 +104,8 @@ PUT request, replaces the object with ID <id>:
 DEL request, deletes the object with ID <id>:
 
     https://gravitate-health.lst.tfo.upm.es/med-information/med-informations/<id>
+
+For further details check the [openapi](openapi.json)
 
 
 Known issues and limitations
