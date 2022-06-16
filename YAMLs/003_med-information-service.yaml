@@ -18,7 +18,7 @@ metadata:
   name: med-info
   annotations:
     prometheus.io/scrape: 'true'
-    prometheus.io/port:   '9090'
+    prometheus.io/port:   '3000'
 spec:
   selector:
     app: med-info
