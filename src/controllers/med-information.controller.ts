@@ -28,6 +28,8 @@ import {
 import {MedInformation} from '../models';
 import {MedInformationRepository} from '../repositories';
 
+import axios from 'axios';
+
 export class MedInformationController {
   constructor(
     @repository(MedInformationRepository)
@@ -119,22 +121,49 @@ export class MedInformationController {
     return this.medInformationRepository.findById(id, filter);
   }
 
-  @patch('/med-informations/{id}')
-  @response(204, {
-    description: 'MedInformation PATCH success',
+  @post('/med-informations/{id}')
+  @response(200, {
+    description: 'MedInformation focused model instance'
   })
-  async updateById(
+  async focusById(
     @param.path.string('id') id: string,
     @requestBody({
       content: {
-        'application/json': {
-          schema: getModelSchemaRef(MedInformation, {partial: true}),
-        },
+        'application/json': {},
       },
     })
-    medInformation: MedInformation,
-  ): Promise<void> {
-    await this.medInformationRepository.updateById(id, medInformation);
+    IPSinformation: any,
+    @param.filter(MedInformation, {exclude: 'where'}) filter?: FilterExcludingWhere<MedInformation>,
+  ): Promise<any> {
+
+    let focusingModuleBody = {
+      ePI: await this.medInformationRepository.findById(id, filter),
+      IPS: IPSinformation
+    }
+
+    var focusingModuleResponse: any;
+
+    try {
+      let url = "http://focusing-module:3000/med-information-focus"
+      //Register the user
+      let focusingModuleResponseAxios = await axios({
+        method: 'post',
+        url: url,
+        timeout: 10 * 1000,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: focusingModuleBody
+      });
+
+      console.log(focusingModuleResponseAxios.data);
+
+      focusingModuleResponse = focusingModuleResponseAxios.data;
+    } catch (error) {
+      console.log(error);
+    }
+
+    return focusingModuleResponse;
   }
 
   @put('/med-informations/{id}')
