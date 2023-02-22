@@ -14,7 +14,6 @@
 
 import {BootMixin} from '@loopback/boot';
 import {ApplicationConfig} from '@loopback/core';
-import {MetricsComponent} from '@loopback/metrics';
 import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication} from '@loopback/rest';
 import {
@@ -55,6 +54,5 @@ export class MedInformationApplication extends BootMixin(
         nested: true,
       },
     };
-    this.component(MetricsComponent);
   }
 }
