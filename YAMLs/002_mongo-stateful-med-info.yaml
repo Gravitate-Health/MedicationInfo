@@ -31,6 +31,7 @@ spec:
         role: mongo-med-info
     spec:
       terminationGracePeriodSeconds: 10
+      serviceAccount: mongo-account
       containers:
       - name: mongo-db
         image: mongo:5.0.8
@@ -52,8 +53,6 @@ spec:
         env:
         - name: MONGO_SIDECAR_POD_LABELS
           value: "role=mongo-med-info,name=mongo-med-info"
-        - name: KUBE_NAMESPACE
-          value: development
   volumeClaimTemplates:
     - metadata:
         name: mongo-med-info-persistent-storage
@@ -61,4 +60,4 @@ spec:
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
-            storage: 500Mi
+            storage: 1Gi
